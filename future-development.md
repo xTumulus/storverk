@@ -13,6 +13,9 @@
   setup has been run and validated once by hand, replace it with
   Terraform (or similar) so the infrastructure is reproducible and
   version-controlled.
+- **Docker Hub.** Consider adding docker image to docker hub, but this does
+  lose the ability to live update, so either fix that or accept the missing
+  feature for ease of deployment.
 
 ## Features
 
