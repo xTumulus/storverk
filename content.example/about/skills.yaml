@@ -1,0 +1,8 @@
+- name: Programming Languages
+  details:
+    - TypeScript
+    - Python
+- name: Frameworks & Libraries
+  details:
+    - Vue
+    - Node

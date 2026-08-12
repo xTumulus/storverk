@@ -1,0 +1,20 @@
+site:
+  name: "Jane Doe"
+  domain: "https://example.com"
+  description: "Software engineer portfolio — experience, projects, and active work."
+  defaultOgImage: "/media/hero-image.png"
+
+theme:
+  daisyTheme: "dark"
+
+security:
+  hsts:
+    enabled: true
+    maxAgeSeconds: 31536000
+    includeSubDomains: true
+
+llm:
+  enabled: false
+
+support:
+  platforms: []

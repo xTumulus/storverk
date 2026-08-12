@@ -1,0 +1,3 @@
+kitchdevelopment.dev, www.kitchdevelopment.dev {
+	reverse_proxy web:80
+}

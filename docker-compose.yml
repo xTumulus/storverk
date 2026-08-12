@@ -1,0 +1,39 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    expose:
+      - "80"
+    volumes:
+      # These overlay the image's baked-in copies with the host directories,
+      # so content, theme CSS, and media can be edited without rebuilding
+      # the image. scripts/watch-content.ts (running inside the container)
+      # picks up content/ and src/styles/ changes and rebuilds + republishes
+      # the site live; media/ is served directly via nginx's /media/ alias
+      # (docker/nginx.conf) and needs no rebuild at all.
+      - ./content:/app/content:ro
+      - ./src/styles:/app/src/styles:ro
+      - ./media:/app/media:ro
+    restart: unless-stopped
+
+  # TLS-terminating reverse proxy in front of `web` — see docker/Caddyfile.
+  # Automatically obtains/renews Let's Encrypt certs via ACME HTTP-01, which
+  # requires DNS for the Caddyfile's domain(s) to already resolve to this
+  # host and ports 80/443 to be reachable from the internet.
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

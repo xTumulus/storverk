@@ -1,0 +1,15 @@
+- company: Example Corp
+  title: Senior Software Engineer
+  startDate: 2022-01
+  endDate: null
+  summary: One sentence describing the role and its scope.
+  highlights:
+    - A specific, measurable accomplishment — what you built and the impact it had.
+    - Another highlight — the tools/stack used and the problem it solved.
+- company: Previous Company
+  title: Software Engineer
+  startDate: 2019-06
+  endDate: 2021-12
+  summary: One sentence describing this earlier role.
+  highlights:
+    - An accomplishment from this role.

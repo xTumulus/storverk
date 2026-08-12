@@ -1,0 +1,4 @@
+- id: example-hobby
+  label: Example Hobby
+  icon: interests
+  image: '/media/hobbies/example-hobby.svg'

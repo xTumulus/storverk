@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-ssr
+.vite-ssg-temp
+src/generated
+docker/generated
+.git
+.vscode
+media

@@ -1,0 +1,7 @@
+# `platform` must match an icon name registered in src/components/icon-registry.ts
+- platform: github
+  label: GitHub
+  url: https://github.com/example
+- platform: linkedin
+  label: LinkedIn
+  url: https://linkedin.com/in/example
